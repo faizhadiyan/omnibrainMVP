@@ -59,7 +59,34 @@ with tab1:
                         if "strategy" in response:
                             st.write("### Marketing Strategy")
                             strategy_dict = json.loads(response["strategy"]["strategy"])
-                            st.json(strategy_dict)
+                            
+                            # Display Channels table with specific columns
+                            st.write("#### Marketing Channels")
+                            channels_df = pd.DataFrame({
+                                'Channel Name': [channel['name'] for channel in strategy_dict["channels"]],
+                                'Strategy': [channel['strategy'] for channel in strategy_dict["channels"]],
+                                'Budget Percentage': [channel['budget_percentage'] for channel in strategy_dict["channels"]],
+                                'Expected ROI': [channel['expected_roi'] for channel in strategy_dict["channels"]]
+                            }).reset_index(drop=True)
+                            st.dataframe(channels_df, use_container_width=True)
+                            
+                            # Display Content Strategy
+                            st.write("#### Content Strategy")
+                            content_df = pd.DataFrame({
+                                'Key Themes': strategy_dict["content_strategy"]["key_themes"],
+                                'Content Types': strategy_dict["content_strategy"]["content_types"]
+                            })
+                            st.dataframe(content_df, use_container_width=True)
+                            
+                            st.write("Posting Frequency:", strategy_dict["content_strategy"]["posting_frequency"])
+                            
+                            # Display Timeline
+                            st.write("#### Timeline")
+                            timeline_df = pd.DataFrame({
+                                'Month': list(strategy_dict["timeline"].keys()),
+                                'Activities': list(strategy_dict["timeline"].values())
+                            })
+                            st.dataframe(timeline_df, use_container_width=True)
                         
                         # Display review
                         # if "review" in response:
