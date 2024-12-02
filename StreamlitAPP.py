@@ -60,15 +60,15 @@ with tab1:
                             st.write("### Marketing Strategy")
                             strategy_dict = json.loads(response["strategy"]["strategy"])
                             
-                            # Display Channels table with specific columns
+                            # Display Channels table with specific columns and hide the index
                             st.write("#### Marketing Channels")
                             channels_df = pd.DataFrame({
                                 'Channel Name': [channel['name'] for channel in strategy_dict["channels"]],
                                 'Strategy': [channel['strategy'] for channel in strategy_dict["channels"]],
                                 'Budget Percentage': [channel['budget_percentage'] for channel in strategy_dict["channels"]],
                                 'Expected ROI': [channel['expected_roi'] for channel in strategy_dict["channels"]]
-                            }).reset_index(drop=True)
-                            st.dataframe(channels_df, use_container_width=True)
+                            })
+                            st.dataframe(channels_df, hide_index=True, use_container_width=True)
                             
                             # Display Content Strategy
                             st.write("#### Content Strategy")
@@ -76,7 +76,7 @@ with tab1:
                                 'Key Themes': strategy_dict["content_strategy"]["key_themes"],
                                 'Content Types': strategy_dict["content_strategy"]["content_types"]
                             })
-                            st.dataframe(content_df, use_container_width=True)
+                            st.dataframe(content_df, hide_index=True, use_container_width=True)
                             
                             st.write("Posting Frequency:", strategy_dict["content_strategy"]["posting_frequency"])
                             
@@ -86,7 +86,7 @@ with tab1:
                                 'Month': list(strategy_dict["timeline"].keys()),
                                 'Activities': list(strategy_dict["timeline"].values())
                             })
-                            st.dataframe(timeline_df, use_container_width=True)
+                            st.dataframe(timeline_df, hide_index=True, use_container_width=True)
                         
                         # Display review
                         # if "review" in response:
