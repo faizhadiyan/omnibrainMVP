@@ -5,7 +5,13 @@ from langchain_community.callbacks.manager import get_openai_callback
 import pandas as pd
 from src.marketing_assistant.utils import read_file, read_sales_data, analyze_marketing_results
 
-st.title("Marketing Division Generator & Analyzer 🚀")
+st.title("Omnibrain.id Marketing Division Generator & Analyzer 🚀")
+
+# Add a subtitle or description
+st.subheader("Empower your marketing team with AI-driven strategies and insights.")
+st.markdown("""
+            Created by Faiz Hadiyan Firza
+""")
 
 # Create tabs for different functionalities
 tab1, tab2 = st.tabs(["Generate Strategy", "PDF & CSV Analyzer"])
