@@ -1,0 +1,20 @@
+{
+  "channels": [
+    {
+      "name": "channel name",
+      "strategy": "strategy description",
+      "budget_percentage": "number",
+      "expected_roi": "ROI description"
+    }
+  ],
+  "content_strategy": {
+    "key_themes": [],
+    "content_types": [],
+    "posting_frequency": ""
+  },
+  "timeline": {
+    "month1": "activities",
+    "month2": "activities",
+    "month3": "activities"
+  }
+}

@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+marketing_assistant.egg-info/PKG-INFO
+marketing_assistant.egg-info/SOURCES.txt
+marketing_assistant.egg-info/dependency_links.txt
+marketing_assistant.egg-info/requires.txt
+marketing_assistant.egg-info/top_level.txt
+src/__init__.py
+src/marketing_assistant/MarketingGenerator.py
+src/marketing_assistant/__init__.py
+src/marketing_assistant/logger.py
+src/marketing_assistant/utils.py

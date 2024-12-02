@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: marketing_assistant
+Version: 0.0.1
+Author: faiz hadiyan
+Author-email: faizhadiyanfirza@gmail.com
+License-File: LICENSE
+Requires-Dist: openai
+Requires-Dist: langchain
+Requires-Dist: langchain-community
+Requires-Dist: langchain-openai
+Requires-Dist: streamlit
+Requires-Dist: python-dotenv
+Requires-Dist: PyPDF2
+Requires-Dist: pandas
+Requires-Dist: numpy
